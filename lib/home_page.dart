@@ -8,20 +8,34 @@ class homePage extends StatefulWidget {
 }
 
 class homePageState extends State<homePage> {
-  var cont = 0;
+  int cont = 0;
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Center(
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Contador Monstro'),
+      ),
+      body: Center(
         child: GestureDetector(
-          child: Text('Contador $cont'),
+          child: Text(
+            'Contador $cont',
+            style: TextStyle(fontSize: 60.0),
+          ),
           onTap: () {
             setState(() {
-              cont++;
+              cont--;
             });
           },
         ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        child: Icon(Icons.add),
+        onPressed: () {
+          setState(() {
+            cont++;
+          });
+        },
       ),
     );
   }
