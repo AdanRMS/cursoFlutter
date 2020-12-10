@@ -15,15 +15,22 @@ class homePageState extends State<homePage> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Contador Monstro'),
+        actions: [CustomSwitch()],
       ),
-      body: Center(
-        child: Switch(
-          value: AppController.instance.isDarkTheme,
-          onChanged: (value) {
-            AppController.instance.changeTheme();
-          },
-        ),
-      ),
+      body: Center(child: CustomSwitch()),
+    );
+  }
+}
+
+//Início da componentização de Widgets
+class CustomSwitch extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Switch(
+      value: AppController.instance.isDarkTheme,
+      onChanged: (value) {
+        AppController.instance.changeTheme();
+      },
     );
   }
 }
