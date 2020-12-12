@@ -10,6 +10,8 @@ class homePage extends StatefulWidget {
 }
 
 class homePageState extends State<homePage> {
+  int cont = 0;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -17,7 +19,23 @@ class homePageState extends State<homePage> {
         title: Text('Contador Monstro'),
         actions: [CustomSwitch()],
       ),
-      body: Center(child: CustomSwitch()),
+      body: Container(
+        width: double.infinity, //Largura da coluna
+        height: double.infinity, //Altura da coluna
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center, //alinhamento das colunas
+          crossAxisAlignment:
+              CrossAxisAlignment.center, //alinhamento das colunas
+          children: [Text('Contador: $cont'), CustomSwitch()],
+        ),
+      ),
+      floatingActionButton: FloatingActionButton(
+          child: Icon(Icons.add),
+          onPressed: () {
+            setState(() {
+              cont++;
+            });
+          }),
     );
   }
 }
