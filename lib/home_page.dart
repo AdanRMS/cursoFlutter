@@ -23,10 +23,38 @@ class homePageState extends State<homePage> {
         width: double.infinity, //Largura da coluna
         height: double.infinity, //Altura da coluna
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center, //alinhamento das colunas
+          mainAxisAlignment:
+              MainAxisAlignment.spaceEvenly, //alinhamento das colunas
           crossAxisAlignment:
               CrossAxisAlignment.center, //alinhamento das colunas
-          children: [Text('Contador: $cont'), CustomSwitch()],
+          children: [
+            Text('Contador: $cont'),
+            Container(
+              height: 50,
+            ),
+            CustomSwitch(),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Container(
+                  width: 50,
+                  height: 50,
+                  color: Colors.black,
+                ),
+                Container(
+                  width: 50,
+                  height: 50,
+                  color: Colors.black,
+                ),
+                Container(
+                  width: 50,
+                  height: 50,
+                  color: Colors.black,
+                )
+              ],
+            )
+          ],
         ),
       ),
       floatingActionButton: FloatingActionButton(
