@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 
 import 'app_controller.dart';
 
@@ -22,13 +23,41 @@ class homePageState extends State<homePage> {
       body: Container(
         width: double.infinity, //Largura da coluna
         height: double.infinity, //Altura da coluna
-        child: Column(
-          mainAxisAlignment:
-              MainAxisAlignment.spaceEvenly, //alinhamento das colunas
-          crossAxisAlignment:
-              CrossAxisAlignment.center, //alinhamento das colunas
+        child: ListView(
+          scrollDirection: Axis.vertical,
+          //Axis.horizontal para criar um scroll na horizantal como o catálogo da Netflix
           children: [
             Text('Contador: $cont'),
+            Container(
+              height: 50,
+            ),
+            Container(
+              height: 50,
+            ),
+            Container(
+              height: 50,
+            ),
+            Container(
+              height: 50,
+            ),
+            Container(
+              height: 50,
+            ),
+            Container(
+              height: 50,
+            ),
+            Container(
+              height: 50,
+            ),
+            Container(
+              height: 50,
+            ),
+            Container(
+              height: 50,
+            ),
+            Container(
+              height: 50,
+            ),
             Container(
               height: 50,
             ),
